@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import '../styles/Calendar.css';
 
 const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWeek, onRoutineStatusChange, onRoutineEdit }) => {
   const renderWeekTitle = () => {
@@ -42,9 +43,9 @@ const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWe
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div className="week-navigation">
         <button onClick={onPreviousWeek}>&lt;</button>
-        <h2 style={{ margin: '0 10px' }}>{renderWeekTitle()}</h2>
+        <h2>{renderWeekTitle()}</h2>
         <button onClick={onNextWeek}>&gt;</button>
       </div>
       <table>

@@ -2,17 +2,25 @@
 // import moment from 'moment';
 
 // const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWeek, onRoutineStatusChange, onRoutineEdit }) => {
-//   // TODO: 주간 타이틀을 렌더링하는 함수를 작성하세요.
-//   const renderWeekTitle = () => {
-//     // ...
-//   };
 
-//   // TODO: 현재 주의 키 값을 얻는 로직을 작성하세요.
-//   const currentWeekKey = // ...
+//   const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWeek, onRoutineStatusChange, onRoutineEdit }) => {
+//     const renderWeekTitle = () => {
+//       if (currentWeek.length === 0) {
+//         return '로딩 중...';
+//       }
+  
+//       const start = currentWeek[0];
+//       const end = currentWeek[currentWeek.length - 1];
+//       return `${start.format('YYYY-MM-DD')} ~ ${end.format('MM-DD')} 주간`;
+//     };
+  
+//     const currentWeekKey = currentWeek[0]?.format('YYYY-MM-DD');
+
+
 
 //   // TODO: 주간별 루틴을 렌더링하는 함수를 작성하세요.
 //   const renderRoutinesForDay = (day) => {
-//     // ...
+//     // 이 부분을 채워 넣으시면 됩니다.
 //   };
 
 //   return (

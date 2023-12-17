@@ -1,0 +1,39 @@
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-header h2 {
+  margin: 0 10px;
+}
+
+.routine-input {
+  width: 70%;
+  margin-right: 5px;
+}
+
+/* Calendar.css */
+
+.week-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ddd; /* 선 추가 */
+}
+
+.week-navigation button {
+  background-color: #5E0EDD; /* 버튼 색상 변경 */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.week-navigation h2 {
+  margin: 0 10px;
+}
+
+
