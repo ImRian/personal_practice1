@@ -1,22 +1,11 @@
-.routine-manager {
-  /* 컨테이너 스타일 */
-}
+/* src-styles/RoutineManager.css */
 
-.routine-add-form {
-  /* 루틴 추가 폼 스타일 */
-  margin-top: 20px;
-}
-
-.routine-add-form input[type="text"] {
-  /* 텍스트 입력 필드 스타일 */
-  margin-right: 10px;
-}
-
-.routine-add-form label {
-  /* 체크박스 라벨 스타일 */
-  margin-right: 10px;
-}
-
+/* 루틴 추가 버튼 스타일 */
 .routine-add-form button {
-  /* 추가 버튼 스타일 */
+  background-color: #5E0EDD; /* 테마 색상 적용 */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
 }

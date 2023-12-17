@@ -31,7 +31,7 @@ const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWe
           value={routine.status[moment(day).format('ddd').toLowerCase()]}
           onChange={(e) => onRoutineStatusChange(routine.id, moment(day).format('ddd').toLowerCase(), e.target.value)}
         >
-          <option value="">상태 선택</option>
+          <option value="">진행 상태</option>
           <option value="o">O</option>
           <option value="x">X</option>
           <option value="ing">진행중</option>
