@@ -1,8 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWeek, onRoutineStatusChange }) => {
-  // 주간 타이틀을 "YYYY-MM-DD ~ MM-DD" 형식으로 표시
+const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWeek, onRoutineStatusChange, onRoutineEdit }) => {
   const renderWeekTitle = () => {
     if (currentWeek.length === 0) {
       return '로딩 중...';
@@ -22,7 +21,12 @@ const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWe
       routine.days && (routine.days[moment(day).format('ddd').toLowerCase()] || routine.days.everyday)
     ).map(routine => (
       <div key={`${routine.id}-${day}`}>
-        {routine.name}
+        <input 
+          type="text" 
+          value={routine.name} 
+          onChange={(e) => onRoutineEdit(routine.id, e.target.value)}
+          style={{ width: '70%', marginRight: '5px' }} 
+        />
         <select
           value={routine.status[moment(day).format('ddd').toLowerCase()]}
           onChange={(e) => onRoutineStatusChange(routine.id, moment(day).format('ddd').toLowerCase(), e.target.value)}

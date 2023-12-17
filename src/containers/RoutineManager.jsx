@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import Calendar from "../components/Calendar";
 import useCalendar from "../hooks/useCalendar";
-import '../styles/RoutineManager.css'; // CSS 파일 import
+import '../styles/RoutineManager.css';
 
 const RoutineManager = () => {
   const { currentWeek, nextWeek, previousWeek } = useCalendar();
-  const [routines, setRoutines] = useState({}); // 객체로 변경
+  const [routines, setRoutines] = useState({});
   const [newRoutineName, setNewRoutineName] = useState("");
   const [routineDays, setRoutineDays] = useState({
     mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false, everyday: false
   });
 
-  const currentWeekKey = currentWeek[0]?.format('YYYY-MM-DD'); // 주의 시작 날짜를 키로 사용
+  const currentWeekKey = currentWeek[0]?.format('YYYY-MM-DD');
 
   const addRoutine = () => {
     if (!newRoutineName) return;
-
     const newRoutine = {
       name: newRoutineName,
       id: Date.now(),
@@ -25,7 +24,7 @@ const RoutineManager = () => {
 
     setRoutines(prevRoutines => ({
       ...prevRoutines,
-      [currentWeekKey]: [...(prevRoutines[currentWeekKey] || []), newRoutine] // 현재 주의 루틴 목록을 업데이트
+      [currentWeekKey]: [...(prevRoutines[currentWeekKey] || []), newRoutine]
     }));
 
     setNewRoutineName("");
@@ -65,6 +64,20 @@ const RoutineManager = () => {
     });
   };
 
+  const handleRoutineEdit = (routineId, newName) => {
+    setRoutines(prevRoutines => {
+      const weekRoutines = prevRoutines[currentWeekKey] || [];
+      const updatedWeekRoutines = weekRoutines.map(routine => {
+        if (routine.id === routineId) {
+          return { ...routine, name: newName };
+        }
+        return routine;
+      });
+
+      return { ...prevRoutines, [currentWeekKey]: updatedWeekRoutines };
+    });
+  };
+
   return (
     <div className="routine-manager">
       <Calendar
@@ -74,6 +87,7 @@ const RoutineManager = () => {
         onNextWeek={nextWeek}
         onPreviousWeek={previousWeek}
         onRoutineStatusChange={handleRoutineStatusChange}
+        onRoutineEdit={handleRoutineEdit}
       />
       <div className="routine-add-form">
         <input
