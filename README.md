@@ -47,12 +47,12 @@
 
 ## 프로젝트 실행 방법
 
-1. **프로젝트 클론**: 이 저장소를 로컬 시스템에 클론합니다.
-git clone https://github.com/ImRian/personal_practice1.git
+1. **프로젝트 클론**: 이 저장소를 로컬 시스템에 클론합니다.  
+```git clone https://github.com/ImRian/personal_practice1.git```
 
-2. **의존성 설치**: 프로젝트의 루트 디렉토리에서 필요한 패키지를 설치합니다.
-npm install
-npm install moment
+2. **의존성 설치**: 프로젝트의 루트 디렉토리에서 필요한 패키지를 설치합니다.  
+```npm install```  
+```npm install moment```
 
 3. **애플리케이션 실행**: 다음 명령어를 실행하여 애플리케이션을 시작합니다.
 npm start
