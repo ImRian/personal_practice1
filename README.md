@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# 주간 루틴 관리 앱
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 개요
 
-## Available Scripts
+이 프로젝트는 주간 루틴 관리 앱을 구현하는 코딩 테스트입니다. 목적은 컴포넌트 스타일링과 상태 관리를 잘 이해하고 있는지 평가하기 위함입니다. 후보자는 React를 사용하여 사용자가 일주일 동안의 루틴을 관리할 수 있는 앱을 구축해야 합니다.
 
-In the project directory, you can run:
+## 문제 의도
 
-### `npm start`
+- **컴포넌트 스타일링**: React 컴포넌트를 스타일링하는 방법을 이해하고 있는지 확인합니다.
+- **상태 관리**: React에서 상태 관리를 효율적으로 할 수 있는 능력을 평가합니다.
+- **함수 구현**: 주어진 기능에 대한 적절한 로직을 작성할 수 있는지 평가합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 프로젝트 실행 방법
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **프로젝트 클론**: 이 저장소를 로컬 시스템에 클론합니다.
+git clone [저장소 URL]
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **의존성 설치**: 프로젝트의 루트 디렉토리에서 필요한 패키지를 설치합니다.
+npm install
+npm install moment
 
-### `npm run build`
+3. **애플리케이션 실행**: 다음 명령어를 실행하여 애플리케이션을 시작합니다.
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **브라우저 접속**: 애플리케이션이 실행되면, 웹 브라우저에서 `localhost:3000`으로 접속합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 작업 지시사항
 
-### `npm run eject`
+- `src/components/Calendar.jsx`와 `src/containers/RoutineManager.jsx` 파일에서 주석으로 표시된 `TODO` 부분을 완성하세요.
+- 주간별 루틴을 표시하고, 사용자가 루틴을 추가, 수정, 삭제할 수 있어야 합니다.
+- 코드의 가독성과 재사용성을 고려하여 작성하세요.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 제출 방법
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 구현한 코드를 포함한 전체 프로젝트 폴더를 zip 파일로 압축합니다.
+- 지정된 이메일 주소나 제출 링크를 통해 제출하세요.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 평가 기준
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **기능 구현**: 주어진 요구 사항에 맞게 기능이 정확히 구현되었는지 평가합니다.
+- **코드 품질**: 코드의 가독성, 구조화, 재사용성을 평가합니다.
+- **스타일링**: 컴포넌트의 스타일링이 적절하게 적용되었는지 평가합니다.

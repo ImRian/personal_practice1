@@ -24,12 +24,13 @@ table {
 }
 
 th, td {
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   padding: 8px;
+  color:#ffffff
 }
 
 th {
-  background-color: #f0f0f0;
+  background-color: #5E0EDD;
 }
 
 td {
@@ -37,7 +38,7 @@ td {
 }
 
 td:hover {
-  background-color: #f0f0f0;
+  background-color: #c2b0df;
 }
 
 input, button {
