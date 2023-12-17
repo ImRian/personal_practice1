@@ -13,7 +13,7 @@
 ## 프로젝트 실행 방법
 
 1. **프로젝트 클론**: 이 저장소를 로컬 시스템에 클론합니다.
-git clone [저장소 URL]
+git clone https://github.com/ImRian/personal_practice1.git
 
 
 2. **의존성 설치**: 프로젝트의 루트 디렉토리에서 필요한 패키지를 설치합니다.
@@ -27,7 +27,6 @@ npm start
 4. **브라우저 접속**: 애플리케이션이 실행되면, 웹 브라우저에서 `localhost:3000`으로 접속합니다.
 
 ## 작업 지시사항
-
 - `src/components/Calendar.jsx`와 `src/containers/RoutineManager.jsx` 파일에서 주석으로 표시된 `TODO` 부분을 완성하세요.
 - 주간별 루틴을 표시하고, 사용자가 루틴을 추가, 수정, 삭제할 수 있어야 합니다.
 - 코드의 가독성과 재사용성을 고려하여 작성하세요.
