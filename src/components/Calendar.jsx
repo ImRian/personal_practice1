@@ -2,32 +2,38 @@ import React from 'react';
 import moment from 'moment';
 
 const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWeek, onRoutineStatusChange }) => {
+  // 주간 타이틀을 "YYYY-MM-DD ~ MM-DD" 형식으로 표시
   const renderWeekTitle = () => {
     if (currentWeek.length === 0) {
       return '로딩 중...';
     }
-  
+
     const start = currentWeek[0];
     const end = currentWeek[currentWeek.length - 1];
-    return `${start.format('YYYY년 MM월 DD일')} - ${end.format('DD일')} 주간`;
+    return `${start.format('YYYY-MM-DD')} ~ ${end.format('MM-DD')} 주간`;
   };
 
+  const currentWeekKey = currentWeek[0]?.format('YYYY-MM-DD');
+
   const renderRoutinesForDay = (day) => {
-    return routines.filter(routine => routine.days[moment(day).format('ddd').toLowerCase()] || routine.days.everyday)
-      .map(routine => (
-        <div key={`${routine.id}-${day}`}>
-          {routine.name}
-          <select
-            value={routine.status[moment(day).format('ddd').toLowerCase()]}
-            onChange={(e) => onRoutineStatusChange(routine.id, moment(day).format('ddd').toLowerCase(), e.target.value)}
-          >
-            <option value="">상태 선택</option>
-            <option value="o">O</option>
-            <option value="x">X</option>
-            <option value="ing">진행중</option>
-          </select>
-        </div>
-      ));
+    const dayRoutines = routines[currentWeekKey] || [];
+
+    return dayRoutines.filter(routine =>
+      routine.days && (routine.days[moment(day).format('ddd').toLowerCase()] || routine.days.everyday)
+    ).map(routine => (
+      <div key={`${routine.id}-${day}`}>
+        {routine.name}
+        <select
+          value={routine.status[moment(day).format('ddd').toLowerCase()]}
+          onChange={(e) => onRoutineStatusChange(routine.id, moment(day).format('ddd').toLowerCase(), e.target.value)}
+        >
+          <option value="">상태 선택</option>
+          <option value="o">O</option>
+          <option value="x">X</option>
+          <option value="ing">진행중</option>
+        </select>
+      </div>
+    ));
   };
 
   return (
@@ -48,7 +54,7 @@ const Calendar = ({ currentWeek, routines, onSelectDay, onNextWeek, onPreviousWe
         <tbody>
           <tr>
             {currentWeek.map((day, index) => (
-              <td key={index} onClick={() => onSelectDay(day)}>
+              <td key={index}>
                 {renderRoutinesForDay(day)}
               </td>
             ))}
